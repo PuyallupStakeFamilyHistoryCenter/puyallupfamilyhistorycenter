@@ -1,0 +1,57 @@
+{% extends "_layout" %}
+
+{% block content %}
+<div class="uk-section">
+	<div class="uk-container">
+		<div class="uk-child-width-1-2@s uk-card uk-card-default uk-padding uk-animation-slide-bottom" uk-grid>
+			<div>
+				<p class="uk-dropcap">1<strong class="uk-text-large">The Discovery Room Experience.</strong>
+					<br>
+					In this experience entire families view and interact with their FamilySearch data through engaging, interactive applications at the Puyallup Family History Center.
+				</p>
+				<a class="uk-button uk-button-primary" href="#discovery_room_modal" title="Schedule Your Visit" uk-toggle>Schedule Your Visit</a>
+			</div>
+			<div>
+				<img src="http://placehold.it/600x400">
+			</div>
+		</div>
+		<div class="uk-child-width-1-2@s uk-card uk-card-default uk-padding uk-animation-slide-bottom uk-hidden" uk-grid>
+			<div>
+				<p class="uk-dropcap">2<strong class="uk-text-large">Turn Our Hearts Experience.</strong>
+					<br>
+					In this experience a ward family history consultant will introduce your family to the Turn Our Hearts in Both Directions guide in your home.
+				</p>
+				<a class="uk-button uk-button-primary" href="javascript:void(0)" title="Schedule Your Visit" uk-toggle>Make an Appointment</a>
+			</div>
+			<div>
+				<img src="http://placehold.it/600x400">
+			</div>
+		</div>
+		<div class="uk-child-width-1-2@s uk-card uk-card-default uk-padding uk-animation-slide-bottom uk-hidden" uk-grid>
+			<div>
+				<p class="uk-dropcap">3<strong class="uk-text-large">Family Learning Sessions.</strong>
+					<br>
+					When your family has chosen which “Ways to Turn Our Hearts in Both Directions” tasks you want to accomplish you will need to set up an appointment with your ward family history consultants or a staff member from the Puyallup Stake Family History Center. Either the ward family history consultants or the Family History Center worker will give your family more in-depth lessons.
+				</p>
+				<a class="uk-button uk-button-primary" href="javascript:void(0)" title="Schedule Your Visit" uk-toggle>Make an Appointment</a>
+			</div>
+			<div>
+				<img src="http://placehold.it/600x400">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function revealCards(){
+		if($('.uk-card.uk-hidden').length > 0){
+			$('.uk-card.uk-hidden').first().removeClass('uk-hidden');
+			setTimeout(revealCards, 250);
+		}
+	}
+	
+	$(document).ready(function(){
+		setTimeout(revealCards, 250);
+	});
+</script>
+{% endblock %}

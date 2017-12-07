@@ -1,0 +1,68 @@
+{% extends "_layout" %}
+{% set title = "Rooms" %}
+
+{% block content %}
+<div class="uk-section">
+	<div class="uk-container">
+		<div class="uk-child-width-1-2@s uk-card uk-card-default uk-padding uk-animation-slide-bottom" uk-grid>
+			<div>
+				<h3 class="uk-margin-small-bottom">Discovery Room</h3>
+				<p class="uk-margin-remove-top">The purpose of the Discovery Room is to provide an experience where entire families can view and interact with their FamilySearch data using engaging, interactive apps.</p>
+				<p>
+					<a class="uk-button uk-button-primary" href="#discovery_room_modal" title="Schedule Your Visit" uk-toggle>Schedule Your Visit</a>
+				</p>
+				<p>
+					<a href="/rooms/discovery-room" title="Schedule Your Visit">Learn More <span uk-icon="icon: chevron-right"></span></a>
+				</p>
+			</div>
+			<div>
+				<img src="/images/rooms/discovery_room.jpg">
+			</div>
+		</div>
+		<div class="uk-child-width-1-2@s uk-card uk-card-default uk-padding uk-animation-slide-bottom uk-hidden" uk-grid>
+			<div>
+				<h3 class="uk-margin-small-bottom">Recording Room</h3>
+				<p class="uk-margin-remove-top">The Puyallup Family History Center Recording Room allows you to record the stories of your life.</p>
+				<p>
+					<a class="uk-button uk-button-primary" href="#recording_room_modal" title="Schedule Your Visit" uk-toggle>Schedule Your Visit</a>
+				</p>
+				<p>
+					<a href="/rooms/recording-room" title="Schedule Your Visit">Learn More <span uk-icon="icon: chevron-right"></span></a>
+				</p>
+			</div>
+			<div>
+				<img src="/images/rooms/recording_room.jpg">
+			</div>
+		</div>
+		<div class="uk-child-width-1-2@s uk-card uk-card-default uk-padding uk-animation-slide-bottom uk-hidden" uk-grid>
+			<div>
+				<h3 class="uk-margin-small-bottom">Learning Room</h3>
+				<p class="uk-margin-remove-top">The Learning Room is where Stake Temple and Family History Service Training occurs for stake and ward leaders, ward family history consultants, and family history center workers.</p>
+				<p>We also encourage Groups Session for ward councils, auxiliary groups, youth groups, primary / activity days / cub scout groups, etc, to come and learn various temple and family history tasks.</p>
+				<p>
+					<a class="uk-button uk-button-primary" href="#learning_room_modal" title="View Open Hours" uk-toggle>View Open Hours</a>
+				</p>
+				<p>
+					<a href="/rooms/learning-room" title="Schedule Your Visit">Learn More <span uk-icon="icon: chevron-right"></span></a>
+				</p>
+			</div>
+			<div>
+				<img src="/images/rooms/learning_room.jpg">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	function revealCards(){
+		if($('.uk-card.uk-hidden').length > 0){
+			$('.uk-card.uk-hidden').first().removeClass('uk-hidden');
+			setTimeout(revealCards, 250);
+		}
+	}
+	
+	$(document).ready(function(){
+		setTimeout(revealCards, 250);
+	});
+</script>
+{% endblock %}

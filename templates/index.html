@@ -1,9 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-</head>
-<body>
-	<h1>Hello World</h1>
-</body>
-</html>
+{% extends "_layout" %}
+{% set title = "Home" %}
+
+{% block content %}
+<div class="uk-section">
+	<div class="uk-container uk-container-center">
+		<h3 class="uk-heading-line uk-text-center uk-margin-medium-bottom"><span><strong>I'm here to&hellip;</strong></span></h3>
+		<div id="start_options" class="uk-child-width-1-2@m" uk-grid>
+		    <div>
+		        <div class="uk-inline">
+		            <img src="/images/site/discovery_room_bg.jpg" alt="Discovery Experience">
+		            <div class="uk-position-bottom-left uk-overlay uk-overlay-default uk-animation-slide-bottom-small">
+					    <span uk-overlay-icon></span>
+					</div>
+		            <div class="uk-overlay uk-overlay-default uk-position-cover uk-flex uk-flex-center uk-flex-middle uk-animation-scale-up uk-transform-origin-bottom-left uk-hidden">
+			            <div class="uk-width-2-3 uk-text-center">
+			                <h4>Have a Family Discovery Experience</h4>
+			                <a href="/rooms/" class="uk-button uk-button-primary">Start</a>
+			            </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div>
+		        <div class="uk-inline">
+		            <img src="/images/site/training_bg.jpg" alt="Family History Training">
+		            <div class="uk-position-bottom-left uk-overlay uk-overlay-default uk-animation-slide-bottom-small">
+					    <span uk-overlay-icon></span>
+					</div>
+		            <div class="uk-overlay uk-overlay-default uk-position-cover uk-flex uk-flex-center uk-flex-middle uk-animation-scale-up uk-transform-origin-bottom-left uk-hidden">
+		                <div class="uk-width-2-3 uk-text-center">
+		                	<h4>Learn more about Family History</h4>
+							<a href="/training/" class="uk-button uk-button-primary">Start</a>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<hr class="uk-divider-icon uk-margin-medium-top">
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#start_options").children('div').hover(function(){
+			$(this).find('.uk-overlay.uk-position-cover').removeClass('uk-hidden');
+			$(this).find('.uk-overlay.uk-position-bottom-left').addClass('uk-hidden');
+		}, function(){
+			$(this).find('.uk-overlay.uk-position-cover').addClass('uk-hidden');
+			$(this).find('.uk-overlay.uk-position-bottom-left').removeClass('uk-hidden');
+		});	
+	});
+</script>
+{% endblock %}

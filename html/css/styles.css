@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+
+/***********
+ ** FONTS **
+ ***********/
+
+/*@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');*/
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans');*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|PT+Sans:400,400i,700');
+
+/*
+
+font-family: 'Open Sans', sans-serif;
+
+font-family: 'PT Sans', sans-serif;
+	
+*/
+
+/**********************
+ ** UI KIT OVERRIDES **
+ **********************/
+
+
+/*************
+ ** REDLINE **
+ *************/
+
+body {
+	/*font-family: Verdana, sans-serif;*/
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.uk-article-title, .register-card .uk-card-title {
+	color: #85B807;
+}
+
+.register-card {
+	padding: 30px 30px 96px;
+}
+
+
+/*******************
+ ** GLOBAL STYLES **
+ *******************/
+
+#discovery_room_modal .status-icons .uk-alert {
+	padding: 15px 15px;
+}
+
+#discovery_room_modal .status-icons * + .uk-alert {
+    margin-top: 0px;
+}
+
+#discovery_room_modal .status-icons .uk-alert > .uk-icon {
+    margin-left: -20px;
+}
+
+/************
+ ** HEADER **
+ ************/
+
+#site_header .uk-navbar-container:not(.uk-navbar-transparent) {
+    background: #d4e3e2;
+}
+
+#site_header #site_logo img {
+	height: 80px;
+	width: 80px;
+}
+
+#site_header #site_logo {
+	font-family: 'PT Sans', sans-serif;
+}
+
+/*#site_logo strong {
+	color: #85B807;
+	font-family: 'Roboto Slab', serif;
+}*/ 
+
+#site_nav > .uk-navbar-right > .uk-navbar-nav > li.uk-active > a.uk-button-text:before {
+	right: 0;
+}
