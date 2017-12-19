@@ -17,19 +17,19 @@
 		    </div>
 	        <div class="uk-navbar-right">
 		        <ul class="uk-navbar-nav uk-visible@s">
-			        <li {% if craft.request.segment(1) == '' %}class="uk-active"{% endif %}><a href="/" class="uk-button-text">Home</a></li>
-					<li {% if craft.request.segment(1) == 'rooms' %} class="uk-active"{% endif %}><a href="/rooms" class="uk-button-text">Rooms</a>
+			        <li {% if craft.app.request.segment(1) == '' %}class="uk-active"{% endif %}><a href="/" class="uk-button-text">Home</a></li>
+					<li {% if craft.app.request.segment(1) == 'rooms' %} class="uk-active"{% endif %}><a href="/rooms" class="uk-button-text">Rooms</a>
 			        	<div class="uk-navbar-dropdown">
 		                    <ul class="uk-nav uk-navbar-dropdown-nav">
-		                        <li {% if craft.request.segment(2) == 'discovery-room' %}class="uk-active"{% endif %}><a href="/rooms/discovery-room">Discovery Room</a></li>
+		                        <li {% if craft.app.request.getSegment(2) == 'discovery-room' %}class="uk-active"{% endif %}><a href="/rooms/discovery-room">Discovery Room</a></li>
 								<li class="uk-nav-divider"></li>
-		                        <li {% if craft.request.segment(2) == 'recording-room' %}class="uk-active"{% endif %}><a href="/rooms/recording-room">Recording Room</a></li>
+		                        <li {% if craft.app.request.getSegment(2) == 'recording-room' %}class="uk-active"{% endif %}><a href="/rooms/recording-room">Recording Room</a></li>
 		                        <li class="uk-nav-divider"></li>
-		                        <li {% if craft.request.segment(2) == 'learning-room' %}class="uk-active"{% endif %}><a href="/rooms/learning-room">Learning Room</a></li>
+		                        <li {% if craft.app.request.getSegment(2) == 'learning-room' %}class="uk-active"{% endif %}><a href="/rooms/learning-room">Learning Room</a></li>
 		                    </ul>
 		                </div>
 			        </li>
-			        <li {% if craft.request.segment(1) == 'training' %}class="uk-active"{% endif %}><a href="/training" class="uk-button-text">Training</a></li>
+			        <li {% if craft.app.request.getSegment(1) == 'training' %}class="uk-active"{% endif %}><a href="/training" class="uk-button-text">Training</a></li>
 		            <li><a href="javascript:void(0)" class="uk-button-text">Quick Links</a>
 		            	<div class="uk-navbar-dropdown">
 		                    <ul class="uk-nav uk-navbar-dropdown-nav">
@@ -49,7 +49,7 @@
 		                    </ul>
 		                </div>
 		            </li>
-		            <li {% if craft.request.segment(1) == 'reports' %}class="uk-active"{% endif %}><a href="/reports" class="uk-button-text">Reports</a></li>
+		            <li {% if craft.app.request.getSegment(1) == 'reports' %}class="uk-active"{% endif %}><a href="/reports" class="uk-button-text">Reports</a></li>
 		        </ul>
 		        <a class="uk-navbar-toggle uk-hidden@s" href="javascript:void(0)">
 		            <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>

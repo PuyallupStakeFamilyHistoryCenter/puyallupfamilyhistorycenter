@@ -25,7 +25,13 @@ var fs = new FamilySearch({
   tokenCookie: 'FS_AUTH_TOKEN',
 
   // Maximum number of times that a throttled request will be retried. Defaults to 10.
-  maxThrottledRetries: 10
+  maxThrottledRetries: 10,
+  
+  // Optional settings that enforces a minimum time in milliseconds (ms) between
+  // requests. This is useful for smoothing out bursts of requests and being nice
+  // to the API servers. When this parameter isn't set (which is the default)
+  // then all requests are immediately sent.
+  requestInterval: 1000
 });
 
 function fsCheckImg(){
@@ -97,10 +103,11 @@ function fsReadinessCheck(){
 	$("#discovery_readiness_intro").addClass('uk-hidden');
 	$("#discovery_room_modal .status-icons").first().removeClass('uk-hidden');
 	$("#discovery_room_modal .modal-status").first().html('<div class="uk-margin-right" uk-spinner></div>Verifying Login...').removeClass('uk-hidden');
-	UIkit.modal('#discovery_room_modal').show();
+
 	fs.get('/platform/users/current', function(error, response){ 
 		if(error){
 	    	console.log('Network error');
+	    	console.log(error);
 		} 
 	
 		else if(response.statusCode >= 500){
@@ -167,7 +174,7 @@ $(document).ready(function(){
 	
 	fs.oauthResponse(function(){
 		if(fs.getAccessToken()){
-			fsReadinessCheck();
+			UIkit.modal('#discovery_room_modal').show();
 		}
 	});
 });
