@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6ac0ff684ebdec35f6729dbdfbd165d",
+    "content-hash": "8698e7421776f995b6f861cb41fec809",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -238,19 +238,15 @@
         },
         {
             "name": "composer/spdx-licenses",
-            "version": "1.1.6",
+            "version": "1.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/2603a0d7ddc00a015deb576fa5297ca43dee6b1c",
-                "reference": "2603a0d7ddc00a015deb576fa5297ca43dee6b1c",
+                "url": "https://api.github.com/repos/composer/spdx-licenses/zipball/2d899e9b33023c631854f36c39ef9f8317a7ab33",
+                "reference": "2d899e9b33023c631854f36c39ef9f8317a7ab33",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.2 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5 || ^5.0.5",
-                "phpunit/phpunit-mock-objects": "2.3.0 || ^3.0"
             },
             "type": "library",
             "extra": {
@@ -263,7 +259,6 @@
                     "Composer\\Spdx\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -290,15 +285,15 @@
                 "spdx",
                 "validator"
             ],
-            "time": "2017-04-03T19:08:52+00:00"
+            "time": "2018-01-03T16:37:06+00:00"
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.0-RC3",
+            "version": "3.0.0-RC4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/fbecf432a08ef457667234ea938218031f1a4e6e",
-                "reference": "fbecf432a08ef457667234ea938218031f1a4e6e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/c8fd183b7eb21d4d4c2584dd687e056a2c58510b",
+                "reference": "c8fd183b7eb21d4d4c2584dd687e056a2c58510b",
                 "shasum": ""
             },
             "require": {
@@ -308,7 +303,7 @@
                 "craftcms/server-check": "~1.1.0",
                 "creocoder/yii2-nested-sets": "~0.9.0",
                 "danielstjules/stringy": "~3.1.0",
-                "enshrined/svg-sanitize": "~0.7.2",
+                "enshrined/svg-sanitize": "~0.8.2",
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-json": "*",
@@ -367,7 +362,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2017-12-19T18:07:14+00:00"
+            "time": "2018-01-02T18:31:00+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -718,16 +713,12 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "0.7.2",
+            "version": "0.8.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/2768fb1c8868d97145e8f2a5457caf590c8d2062",
-                "reference": "2768fb1c8868d97145e8f2a5457caf590c8d2062",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/432fc4fc7e95b8a866790ba27e35076b9dd96ebe",
+                "reference": "432fc4fc7e95b8a866790ba27e35076b9dd96ebe",
                 "shasum": ""
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "^0.1.2",
-                "phpunit/phpunit": "^4.7"
             },
             "type": "library",
             "autoload": {
@@ -735,7 +726,6 @@
                     "enshrined\\svgSanitize\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0+"
             ],
@@ -746,7 +736,7 @@
                 }
             ],
             "description": "An SVG sanitizer for PHP",
-            "time": "2017-08-31T00:10:18+00:00"
+            "time": "2017-12-06T15:31:26+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -1560,18 +1550,15 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.6.2",
+            "version": "1.7.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/7a30649c67ee0d19faacfd9fa2cfb6cc032d9b19",
-                "reference": "7a30649c67ee0d19faacfd9fa2cfb6cc032d9b19",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/9b355654ea99460397b89c132b5c1087b6bf4473",
+                "reference": "9b355654ea99460397b89c132b5c1087b6bf4473",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.5"
             },
             "bin": [
                 "bin/jsonlint"
@@ -1582,7 +1569,6 @@
                     "Seld\\JsonLint\\": "src/Seld/JsonLint/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1600,7 +1586,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2017-11-30T15:34:22+00:00"
+            "time": "2018-01-03T12:13:57+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -2312,11 +2298,11 @@
         },
         {
             "name": "yiisoft/yii2-queue",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-queue/zipball/5e3bc6c389c4374acaf40dfa1901ba258983f575",
-                "reference": "5e3bc6c389c4374acaf40dfa1901ba258983f575",
+                "url": "https://api.github.com/repos/yiisoft/yii2-queue/zipball/8c2b337f7d9ea934c2affdfc21c9fb387d0a0773",
+                "reference": "8c2b337f7d9ea934c2affdfc21c9fb387d0a0773",
                 "shasum": ""
             },
             "require": {
@@ -2324,16 +2310,8 @@
                 "symfony/process": "*",
                 "yiisoft/yii2": "~2.0.13"
             },
-            "require-dev": {
-                "jeremeamia/superclosure": "*",
-                "pda/pheanstalk": "*",
-                "php-amqplib/php-amqplib": "*",
-                "phpunit/phpunit": "~4.4",
-                "yiisoft/yii2-debug": "*",
-                "yiisoft/yii2-gii": "*",
-                "yiisoft/yii2-redis": "*"
-            },
             "suggest": {
+                "enqueue/amqp-lib": "Need for AMQP interop queue.",
                 "ext-gearman": "Need for Gearman queue.",
                 "ext-pcntl": "Need for process signals.",
                 "pda/pheanstalk": "Need for Beanstalk queue.",
@@ -2350,6 +2328,7 @@
                 "psr-4": {
                     "yii\\queue\\": "src",
                     "yii\\queue\\amqp\\": "src/drivers/amqp",
+                    "yii\\queue\\amqp_interop\\": "src/drivers/amqp_interop",
                     "yii\\queue\\beanstalk\\": "src/drivers/beanstalk",
                     "yii\\queue\\db\\": "src/drivers/db",
                     "yii\\queue\\file\\": "src/drivers/file",
@@ -2358,7 +2337,6 @@
                     "yii\\queue\\sync\\": "src/drivers/sync"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -2380,7 +2358,7 @@
                 "redis",
                 "yii"
             ],
-            "time": "2017-11-13T19:49:43+00:00"
+            "time": "2017-12-26T17:16:14+00:00"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
