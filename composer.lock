@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ca35d5ae7f8de25a33de2e41b93e9af",
+    "content-hash": "d3d910059b6db96c5b145ddad92c3cb0",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -289,11 +289,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.0.0-RC6",
+            "version": "3.0.0-RC7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/320a2ded079ac7a66e0a328bd8f468986e7c3b8e",
-                "reference": "320a2ded079ac7a66e0a328bd8f468986e7c3b8e",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/f8c991cb01afce44cb0803749e84e776f1ce2d51",
+                "reference": "f8c991cb01afce44cb0803749e84e776f1ce2d51",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +363,7 @@
                 "docs": "https://github.com/craftcms/docs",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2018-01-16T23:38:38+00:00"
+            "time": "2018-01-24T23:47:15+00:00"
         },
         {
             "name": "craftcms/oauth2-craftid",
@@ -452,7 +452,7 @@
             "version": "1.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/11b0b7606f93d223b9e8d5457fc320405aeb1545",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/0ca795da09e06f50edbc7a99f36b9359ad9e72ed",
                 "reference": "11b0b7606f93d223b9e8d5457fc320405aeb1545",
                 "shasum": ""
             },
@@ -1038,11 +1038,11 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.41",
+            "version": "1.0.42",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f400aa98912c561ba625ea4065031b7a41e5a155",
-                "reference": "f400aa98912c561ba625ea4065031b7a41e5a155",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/09eabc54e199950041aef258a85847676496fe8e",
+                "reference": "09eabc54e199950041aef258a85847676496fe8e",
                 "shasum": ""
             },
             "require": {
@@ -1051,14 +1051,10 @@
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
-            "require-dev": {
-                "ext-fileinfo": "*",
-                "mockery/mockery": "~0.9",
-                "phpspec/phpspec": "^2.2",
-                "phpunit/phpunit": "~4.8"
-            },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
+                "ext-ftp": "Allows you to use FTP server storage",
+                "ext-openssl": "Allows you to use FTPS server storage",
                 "league/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
                 "league/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
                 "league/flysystem-azure": "Allows you to use Windows Azure Blob storage",
@@ -1082,7 +1078,6 @@
                     "League\\Flysystem\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1112,7 +1107,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-08-06T17:41:04+00:00"
+            "time": "2018-01-27T16:03:56+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -1579,11 +1574,11 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/9b355654ea99460397b89c132b5c1087b6bf4473",
-                "reference": "9b355654ea99460397b89c132b5c1087b6bf4473",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/d15f59a67ff805a44c50ea0516d2341740f81a38",
+                "reference": "d15f59a67ff805a44c50ea0516d2341740f81a38",
                 "shasum": ""
             },
             "require": {
@@ -1615,7 +1610,7 @@
                 "parser",
                 "validator"
             ],
-            "time": "2018-01-03T12:13:57+00:00"
+            "time": "2018-01-24T12:46:19+00:00"
         },
         {
             "name": "seld/phar-utils",
