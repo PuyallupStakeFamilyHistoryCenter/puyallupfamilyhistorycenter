@@ -1,0 +1,49 @@
+{% extends "_layout" %}
+{% set title = "Training" %}
+
+{% block content %}
+
+<div class="uk-grid-collapse uk-margin-medium-top uk-margin-medium-bottom" uk-grid>
+    <aside id="table_of_contents_wrapper" class="uk-width-medium uk-background-muted">
+        <div class="uk-padding-small" uk-sticky>
+            <ul class="uk-nav uk-nav-default" uk-scrollspy-nav="closest: li; scroll: true">
+                <li class="uk-nav-header">Table of Contents</li>
+                <li class="uk-nav-divider"></li>
+                <li><a href="#intro">Introduction</a></li>
+                {% for block in entry.tutorialContent.type('tutorialHeading').all() %}
+                <li><a href="#{{ block.tutorialTitle|lower|replace({' ': '_'}) }}">{{ block.tutorialTitle }}</a></li>
+				{% endfor %}
+            </ul>
+        </div>
+    </aside>
+    <div class="uk-width-expand">
+        <div class="uk-container">
+            <article class="uk-article">
+                <h1 id="intro" class="uk-article-title"><a class="uk-link-reset" href="">{{ entry.title }}</a></h1>
+                <p class="uk-article-meta">Written on {{ entry.postDate|date("M d, Y") }}.</p>
+                {% if entry.tutorialIntro %}
+                <p class="uk-text-lead">{{ entry.tutorialIntro }}</p>
+                {% endif %}
+                {% for block in entry.tutorialContent.type('').all() %}
+                    {% switch block.type %}
+                        {% case "tutorialHeading" %}
+                            <h3 id="{{ block.tutorialTitle|lower|replace({' ': '_'}) }}">{{ block.tutorialTitle }}</h3>      
+                        {% case "tutorialText" %}   
+                    		{{ block.tutorialTextCopy }}
+                        {% case "tutorialMedia" %}
+                        	{% switch block.tutorialMediaAsset[0].mimeType %}
+                            	{% case "video/mp4" %}
+                                	<video class=" uk-width-1-1 uk-responsive-width" controls>
+                        				<source src="/assets/tutorial/{{ block.tutorialMediaAsset[0].title|replace({' ': '_'}) }}.mp4" type="video/mp4">
+                                    </video>
+                        		{% default %}
+                            {% endswitch %}
+                        {% default %}
+                        
+                    {% endswitch %}
+                {% endfor %}
+            </article>
+        </div>
+    </div>
+</div>
+{% endblock %}
