@@ -2,7 +2,22 @@
 {% set title = "Training" %}
 
 {% block content %}
-
+<section id="video_wrapper" class="uk-section uk-position-fixed uk-position-z-index uk-width-1-1 uk-background-secondary uk-invisible" aria-hidden="true" style="transition: top 0.5s ease-in-out;">
+	<div class="uk-container">
+		<div class="uk-flex uk-flex-center">
+			<button type="button" class="uk-close-large uk-position-top-right uk-position-medium" onclick="closeVideo();" uk-close></button>
+			{% for block in entry.tutorialContent.type('').all() %}
+                {% if block.type == 'tutorialMedia' %}
+                	{% if block.tutorialMediaAsset[0].mimeType == 'video/mp4' %}
+                    	<video class="video uk-animation-fade uk-hidden" width="1000" height="600" controls>
+            				<source src="/assets/tutorial/{{ block.tutorialMediaAsset[0].title|replace({' ': '_'}) }}.mp4" type="video/mp4">
+                        </video>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+		</div>
+	</div>
+</section>
 <div class="uk-grid-collapse uk-margin-medium-top uk-margin-medium-bottom" uk-grid>
     <aside id="table_of_contents_wrapper" class="uk-width-medium uk-background-muted">
         <div class="uk-padding-small" uk-sticky>
@@ -19,7 +34,7 @@
     <div class="uk-width-expand">
         <div class="uk-container">
             <article class="uk-article">
-                <h1 id="intro" class="uk-article-title"><a class="uk-link-reset" href="">{{ entry.title }}</a></h1>
+                <h1 id="intro" class="uk-article-title">{{ entry.title }}</h1>
                 <p class="uk-article-meta">Written on {{ entry.postDate|date("M d, Y") }}.</p>
                 {% if entry.tutorialIntro %}
                 <p class="uk-text-lead">{{ entry.tutorialIntro }}</p>
@@ -33,9 +48,7 @@
                         {% case "tutorialMedia" %}
                         	{% switch block.tutorialMediaAsset[0].mimeType %}
                             	{% case "video/mp4" %}
-                                	<video class=" uk-width-1-1 uk-responsive-width" controls>
-                        				<source src="/assets/tutorial/{{ block.tutorialMediaAsset[0].title|replace({' ': '_'}) }}.mp4" type="video/mp4">
-                                    </video>
+                                	<button class="uk-button uk-button-primary video-button">Watch Video <span uk-icon="icon: chevron-right"></button>
                         		{% default %}
                             {% endswitch %}
                         {% default %}
@@ -46,4 +59,48 @@
         </div>
     </div>
 </div>
+
+<script>
+	function displayVideo(event){
+		let videoButtons = document.querySelectorAll('.video-button');
+		let idx = 0;
+		
+		for(idx in videoButtons){
+			if(event.target === videoButtons[idx]){
+				idx = idx;
+				break;
+			}
+		}
+
+		let videoWrapper = document.getElementById('video_wrapper');
+		let videos = document.querySelectorAll('.video');
+		
+		videos.forEach(function(elem){
+			elem.classList.add('uk-hidden');
+		});
+		
+		videos[idx].classList.remove('uk-hidden');
+		
+		if(videoWrapper.getAttribute('aria-hidden')){
+			videoWrapper.setAttribute('aria-hidden', false);
+			videoWrapper.style.top = '0px';
+		}
+	}
+	
+	function closeVideo(){
+		let videoWrapper = document.getElementById('video_wrapper');
+		videoWrapper.style.top = (videoWrapper.clientHeight * -1) + 'px';
+	}
+	
+	window.onload = function(){
+		document.querySelector('.video').classList.remove('uk-hidden');
+		document.getElementById('video_wrapper').classList.remove('uk-invisible');
+		document.getElementById('video_wrapper').style.top = (document.getElementById('video_wrapper').clientHeight * -1) + 'px';
+		
+		let videoButtons = document.querySelectorAll('.video-button');
+		videoButtons.forEach(function(button, idx){
+			button.onclick = displayVideo;
+		});
+	}
+</script>
 {% endblock %}
