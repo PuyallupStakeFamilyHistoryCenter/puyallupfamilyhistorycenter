@@ -76,13 +76,17 @@ strong {
 
 #site_header #site_logo {
 	font-family: 'PT Sans', sans-serif;
-}
-
-/*#site_logo strong {
-	color: #85B807;
-	font-family: 'Roboto Slab', serif;
-}*/ 
+} 
 
 #site_nav > .uk-navbar-right > .uk-navbar-nav > li.uk-active > a.uk-button-text:before {
 	right: 0;
 }
+
+/**************
+ ** TRAINING **
+ **************/
+ 
+ #video_wrapper {
+	 top: 80px;
+	 z-index: 981;
+ }

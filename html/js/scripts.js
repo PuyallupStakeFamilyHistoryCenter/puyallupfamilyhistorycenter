@@ -13,7 +13,7 @@ var fs = new FamilySearch({
 
   // Required when using OAuth.
   // https://familysearch.org/developers/docs/guides/authentication
-  redirectUri: 'http://34.214.220.226/rooms/',
+  redirectUri: 'http://52.89.69.114/rooms/',
 
   // Save the access token in a cookie and load if from a cookie so that the
   // session isn't lost when the page reloads or changes. Defaults to false.
