@@ -17,9 +17,9 @@
 		</div>
 	</div>
 </section>
-<div id="tutorial" class="uk-grid-collapse uk-margin-medium-top uk-margin-medium-bottom" uk-grid>
-    <aside id="table_of_contents_wrapper" class="uk-width-medium uk-background-muted">
-        <div class="uk-padding-small" uk-sticky>
+<div id="tutorial" class="uk-grid-collapse uk-margin-medium-bottom" uk-grid>
+    <!--<aside id="table_of_contents_wrapper" class="uk-width-medium uk-background-muted">
+        <div class="uk-padding-small" uk-sticky="top: #tutorial_content; bottom: #site_footer">
             <ul class="uk-nav uk-nav-default" uk-scrollspy-nav="closest: li; scroll: true">
                 <li class="uk-nav-header">Table of Contents</li>
                 <li class="uk-nav-divider"></li>
@@ -29,8 +29,8 @@
 				{% endfor %}
             </ul>
         </div>
-    </aside>
-    <div class="uk-width-expand">
+    </aside>-->
+    <div id="tutorial_content">
         <div class="uk-container">
             <article class="uk-article">
                 <h1 id="intro" class="uk-article-title">{{ entry.title }}</h1>
@@ -52,7 +52,7 @@
                         		{% default %}
                             {% endswitch %}
                         {% default %}
-                        
+						
                     {% endswitch %}
                 {% endfor %}
             </article>
@@ -82,6 +82,21 @@
 		videos[idx].classList.remove('uk-hidden');
 	}
 	
+	function adjustLayout(){
+		if(window.innerWidth < window.innerHeight){
+			document.getElementById('video_wrapper').classList.remove('uk-width-1-2');
+			document.getElementById('video_wrapper').classList.add('uk-width-1-1');
+			document.getElementById('tutorial').style.marginTop = document.getElementById('video_wrapper').clientHeight + 110 + 'px';
+			document.getElementById('tutorial_content').classList.remove('uk-width-1-2');
+		} else {
+			document.getElementById('video_wrapper').classList.remove('uk-width-1-1');
+			document.getElementById('video_wrapper').classList.add('uk-width-1-2');
+			document.getElementById('video_wrapper').style.right = 0;
+			document.getElementById('tutorial').style.marginTop = '110px';
+			document.getElementById('tutorial_content').classList.add('uk-width-1-2');
+		}
+	}
+	
 	window.onload = function(){
 		document.getElementById('site_header').classList.add('uk-position-fixed','uk-width-1-1');
 		document.getElementById('site_header').style.top = 0;
@@ -89,8 +104,10 @@
 		document.getElementById('site_header').style.zIndex = 982;
 		document.querySelector('.video').classList.remove('uk-hidden');
 		document.getElementById('video_wrapper').classList.remove('uk-invisible');
-		document.getElementById('tutorial').classList.remove('uk-margin-medium-top');
-		document.getElementById('tutorial').style.marginTop = document.getElementById('video_wrapper').clientHeight + 110 + 'px';
+		
+		window.addEventListener('resize', adjustLayout, false);
+				
+		adjustLayout();
 		
 		let videoButtons = document.querySelectorAll('.video-button');
 		videoButtons.forEach(function(button){
