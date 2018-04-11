@@ -21,10 +21,10 @@
   "minimum-stability": "beta",
   "require": {
     "php": ">=7.0.0",
-    "craftcms/cms": "3.0.0-RC13",
+    "craftcms/cms": "3.0.2",
     "vlucas/phpdotenv": "^2.4.0",
     "roave/security-advisories": "dev-master",
-    "craftcms/redactor": "1.0.1"
+    "craftcms/redactor": "1.1.0"
   },
   "autoload": {
     "psr-4": {
